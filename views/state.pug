@@ -1,0 +1,45 @@
+extends layout
+
+block content
+  .back-row
+    a.btn(href="/") ← Volver al mapa
+    span.pill #{state.name}
+
+  h1= state.name
+  p.lead Explora lo más representativo del estado: gastronomía, historia, música, arte y un dato curioso.
+
+  .section-grid
+    .card.col-6
+      .card-inner
+        h2 Comidas típicas
+        ul
+          each c in state.comidas
+            li= c
+
+    .card.col-6
+      .card-inner
+        h2 Un poquito de historia
+        p= state.historia
+
+    .card.col-6
+      .card-inner
+        h2 Música
+        p= state.musica
+
+    .card.col-6
+      .card-inner
+        h2 Arte y artesanía
+        p= state.arte
+
+    .card.col-12
+      .card-inner
+        h2 Dato curioso
+        p.funfact= state.dato
+
+    .card.col-12
+      .card-inner
+        h2 Enlaces para aprender más
+        ul
+          each l in state.links
+            li
+              a(href=l.url target="_blank" rel="noopener noreferrer")= l.titulo

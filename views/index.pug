@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  h1= title
+  p.lead Explora México estado por estado. Haz clic en el mapa para descubrir comidas típicas, historia, música, arte y un dato curioso en cada lugar.
+
+  .grid-2
+    .card
+      .card-inner
+        .pill 📍 Mapa interactivo
+        .map-wrap
+          #map-tooltip.tooltip(hidden="true")
+          #mx-map-container.map-container
+
+        script.
+          window.__STATE_DATA__ = !{JSON.stringify(states)}
+        script(src="/map.js")
+
+    .card
+      .card-inner
+        h2 ¿Qué vas a encontrar?
+        p.lead
+          | Cada estado tiene una página con comida, historia, música, arte y un dato curioso, además de enlaces para seguir aprendiendo.
+        hr
+        h2 Acceso rápido
+        p.lead Si prefieres, también puedes entrar por lista.
+        ul
+          each st in states
+            li
+              a(href=`/estado/${st.slug}`)= st.name

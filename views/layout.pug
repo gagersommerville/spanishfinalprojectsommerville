@@ -1,0 +1,47 @@
+doctype html
+html(lang="es")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title #{title}
+    link(rel="stylesheet", href="/styles.css")
+
+  body
+    header.topbar
+      .container.topbar-inner
+        a.brand(href="/")
+          span.brand-badge 🇲🇽
+          span Mapa cultural de México
+
+        nav.nav
+          details.sources-header
+            summary.btn Fuentes
+            ul.sources-list
+              li
+                strong Instituto Nacional de Antropología e Historia (INAH)
+                br
+                a(href="https://www.gob.mx/cultura/inah" target="_blank" rel="noopener noreferrer")
+                  | https://www.gob.mx/cultura/inah
+              li
+                strong INEGI – Instituto Nacional de Estadística y Geografía
+                br
+                a(href="https://www.inegi.org.mx" target="_blank" rel="noopener noreferrer")
+                  | https://www.inegi.org.mx
+              li
+                strong Secretaría de Cultura – Gobierno de México
+                br
+                a(href="https://www.gob.mx/cultura" target="_blank" rel="noopener noreferrer")
+                  | https://www.gob.mx/cultura
+              li
+                strong UNAM – Difusión Cultural
+                br
+                a(href="https://www.cultura.unam.mx" target="_blank" rel="noopener noreferrer")
+                  | https://www.cultura.unam.mx
+              li
+                strong Encyclopaedia Britannica – Mexico
+                br
+                a(href="https://www.britannica.com/place/Mexico" target="_blank" rel="noopener noreferrer")
+                  | https://www.britannica.com/place/Mexico
+
+    main.container
+      block content
